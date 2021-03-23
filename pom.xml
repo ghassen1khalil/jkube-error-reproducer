@@ -15,7 +15,7 @@
     <description>Demo project for Spring Boot</description>
     <properties>
         <java.version>11</java.version>
-        <jkube.generator.name>docker.io/ghassenkhalil/${project.artifactId}:${project.version}</jkube.generator.name>
+        <jkube.generator.name>ghassenkhalil/${project.artifactId}:${project.version}</jkube.generator.name>
     </properties>
     <dependencies>
         <dependency>
@@ -40,6 +40,13 @@
                 <groupId>org.eclipse.jkube</groupId>
                 <artifactId>kubernetes-maven-plugin</artifactId>
                 <version>1.1.1</version>
+                <configuration>
+                    <images>
+                        <image>
+                            <name>ghassenkhalil/${project.artifactId}:${project.version}</name>
+                        </image>
+                    </images>
+                </configuration>
             </plugin>
         </plugins>
     </build>
